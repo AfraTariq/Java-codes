@@ -48,6 +48,6 @@ public class Cylinder {
         System.out.println("Enter new radius: ");
         r = input.nextDouble();
         Cylinder cylinder = new Cylinder(r, h);
-        System.out.println(cylinder.toString());
+        System.out.println(cylinder);
     }
 }
