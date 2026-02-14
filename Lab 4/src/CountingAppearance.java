@@ -6,10 +6,10 @@ public class CountingAppearance {
         int appearance=0, lowerAppearance=0, upperAppearance=0;
         System.out.print("Enter your sentence: ");
         String sentence = input.nextLine();
-        String sentence1 = sentence.toLowerCase();
+        String sentence1 = sentence.toLowerCase(); //creating a lowercase copy of the sentence to find only appearance
         System.out.print("Enter a letter: ");
         char letter = input.next().charAt(0);
-        letter=Character.toLowerCase(letter);
+        letter=Character.toLowerCase(letter); //making it lower case to compare with the lower case sentence
         for(int i=0;i<sentence.length();i++){
             if(sentence1.charAt(i)==letter){
                 appearance++;
