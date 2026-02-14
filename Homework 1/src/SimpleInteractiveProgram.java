@@ -71,8 +71,8 @@ public class SimpleInteractiveProgram {
         char anotherCalc='y';
         int choice;
         double a,b;
+        System.out.print("\n=== Part B: Math Calculations ===");
         while (anotherCalc == 'y') {
-            System.out.print("=== Part B: Math Calculations ===");
             System.out.println("\n Choose an operation:");
             System.out.println("1. Addition (+)");
             System.out.println("2. Subtraction (-)");
