@@ -6,10 +6,14 @@ public class CompareFloat
     {
         Scanner input = new Scanner(System.in);
         double d1, d2, d3;
+        //Asks the user to enter 3 double-precision floating-point numbers
         System.out.print("Enter three double numbers: ");
+        //Reads the numbers into 3 variables of type double
         double n1=input.nextDouble()*1000;
         double n2=input.nextDouble()*1000;
         double n3=input.nextDouble()*1000;
+        //Determines whether all three numbers are equal when rounded to three decimal
+        //places.
         n1= Math.round(n1)/1000.0;
         n2= Math.round(n2)/1000.0;
         n3= Math.round(n3)/1000.0;
@@ -17,6 +21,8 @@ public class CompareFloat
             System.out.println("All three numbers are the same when rounded to three decimal places.");
         else
             System.out.println("The numbers are different when rounded to three decimal places.");
+        //Determines whether the maximum difference between any two of the three
+        //numbers is less than 0.001.
         d1=Math.abs(n1-n2);
         d2=Math.abs(n1-n3);
         d3=Math.abs(n2-n3);
