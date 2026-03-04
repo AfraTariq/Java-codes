@@ -31,6 +31,8 @@ public class IPAddress {
             part4 ="0";
         noOfIPAddress++;
     }
+    /*Method to set an IP address by setting its four parts.
+    You should be able to set it all in one statement. */
     void setIPAddress(String p1,String p2,String p3,String p4){
         if(Integer.parseInt(p1)>=0 && Integer.parseInt(p1)<=255)
             part1 =p1;
@@ -49,6 +51,7 @@ public class IPAddress {
         else
             part4 ="0";
     }
+    //Method to get the different IP address parts.
     public String getPart1(){
         return part1;
     }
@@ -61,18 +64,23 @@ public class IPAddress {
     public String getPart4(){
         return part4;
     }
-    public int getNoOfIPAddress(){
+    //Method to the total number of the IP addresses created.
+    public static int getNoOfIPAddress(){
         return noOfIPAddress;
     }
+    //Method PrintIP which displays the IP address
     public String PrintIP(){
         return part1+"."+part2+"."+part3+"."+part4;
     }
-    public void compareIP(IPAddress ip1, IPAddress ip2){
+    /*Method to compare if IP addresses are the same or not.
+    * returns true if they are equal
+    * returns false if they are not equal */
+    public boolean compareIP(IPAddress ip1, IPAddress ip2){
         if(Integer.parseInt(ip1.getPart1())==Integer.parseInt(ip2.getPart1()) && Integer.parseInt(ip1.getPart2())==Integer.parseInt(ip2.getPart2()) && Integer.parseInt(ip1.getPart3())==Integer.parseInt(ip2.getPart3()) && Integer.parseInt(ip1.getPart4())==Integer.parseInt(ip2.getPart4())){
-            System.out.println("They are same.");
+            return true;
         }
         else{
-            System.out.println("They are not same.");
+            return false;
         }
     }
 
