@@ -10,24 +10,25 @@ public class IPAddressMainDriver {
         System.out.println("Type an IP Address with 4 parts, each part separated by a space (ending with a -1). ");
 
         while(true) {
-            if(IPAddress.getNoOfIPAddress()<100) {
-                p1 = sc.next();
-                if (p1.equals("-1"))
+            if(size<100) {      //do this if size<100 (to not go beyond the bounds of the array)
+                p1 = sc.next();     //read the first part
+                if (p1.equals("-1"))        //if the first part is -1 exit
                     break;
-                p2 = sc.next();
-                p3 = sc.next();
-                p4 = sc.next();
-                IP[size] = new IPAddress(p1, p2, p3, p4);
-                size++;
+                p2 = sc.next();     //read the second part
+                p3 = sc.next();     //read the third part
+                p4 = sc.next();     //read the fourth part
+                IP[size] = new IPAddress(p1, p2, p3, p4);       //create a new object in the position in the list using the above read data
+                size++;     //increment the variable to know how many IP Addresses are saved and to know which position the next object should be created at
             }
             else{
                 System.out.println("Array full, cannot add more IPs.");
                 break;
             }
         }
+        //Making my test class interactive by adding the following options to let user do multiple tasks.
         int choice;
         System.out.println("Welcome to IP Address Management Software. \nWhat would you like to do today?");
-
+        //keeps asking for a choice until the user chooses 6, that is to exit the menu
         do {
             System.out.println("\n1. Search for an IP Address");
             System.out.println("2. Count IPs starting with a value");
@@ -63,7 +64,7 @@ public class IPAddressMainDriver {
 
         } while (choice != 6);
     }
-
+    //Search for a particular IP address
     public static void searchIP(IPAddress[] list, int size) {
         System.out.println("Enter IP to search:");
         Scanner input = new Scanner(System.in);
@@ -77,7 +78,7 @@ public class IPAddressMainDriver {
         }
         System.out.println("IP not found.");
     }
-
+    //Count how many IP addresses start with a particular value
     public static void countStartingValue(IPAddress[] list, int size) {
         System.out.print("Enter starting value: ");
         Scanner input = new Scanner(System.in);
@@ -90,12 +91,12 @@ public class IPAddressMainDriver {
         }
         System.out.println("Total = " + count);
     }
-
+    //Print all IP addresses
     public static void printAll(IPAddress[] list, int size) {
         for (int i = 0; i < size; i++)
-            System.out.println(list[i].PrintIP() + "\n");
+            System.out.println("\n" + list[i].PrintIP());
     }
-
+    //Delete a particular IP address (if it exists).
     public static int deleteIP(IPAddress[] list, int size) {
         System.out.println("Enter IP to delete:");
         Scanner input = new Scanner(System.in);
@@ -113,7 +114,7 @@ public class IPAddressMainDriver {
         System.out.println("IP not found.");
         return size;
     }
-
+    //Print all IP addresses to a file (the user will give the name of the file)
     public static void saveToFile(IPAddress[] list, int size) throws Exception {
         System.out.print("Enter file name: ");
         Scanner input = new Scanner(System.in);
