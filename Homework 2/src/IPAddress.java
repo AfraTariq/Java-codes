@@ -13,22 +13,7 @@ public class IPAddress {
         noOfIPAddress++;
     }
     public IPAddress(String p1,String p2,String p3,String p4){
-        if(Integer.parseInt(p1)>=0 && Integer.parseInt(p1)<=255)
-            part1 =p1;
-        else
-            part1 ="0";
-        if(Integer.parseInt(p2)>=0 && Integer.parseInt(p2)<=255)
-            part2 =p2;
-        else
-            part2 ="0";
-        if(Integer.parseInt(p3)>=0 && Integer.parseInt(p3)<=255)
-            part3 =p3;
-        else
-            part3 ="0";
-        if(Integer.parseInt(p4)>=0 && Integer.parseInt(p4)<=255)
-            part4 =p4;
-        else
-            part4 ="0";
+        setIPAddress(p1,p2,p3,p4);
         noOfIPAddress++;
     }
     /*Method to set an IP address by setting its four parts.
@@ -50,6 +35,10 @@ public class IPAddress {
             part4 =p4;
         else
             part4 ="0";
+    }
+    //Method to decrement the static variable when an IP address is deleted
+    public static void decnoOfIPAddress(){
+        noOfIPAddress--;
     }
     //Method to get the different IP address parts.
     public String getPart1(){
@@ -75,8 +64,8 @@ public class IPAddress {
     /*Method to compare if IP addresses are the same or not.
     * returns true if they are equal
     * returns false if they are not equal */
-    public boolean compareIP(IPAddress ip1, IPAddress ip2){
-        if(Integer.parseInt(ip1.getPart1())==Integer.parseInt(ip2.getPart1()) && Integer.parseInt(ip1.getPart2())==Integer.parseInt(ip2.getPart2()) && Integer.parseInt(ip1.getPart3())==Integer.parseInt(ip2.getPart3()) && Integer.parseInt(ip1.getPart4())==Integer.parseInt(ip2.getPart4())){
+    public boolean compareIP(IPAddress ip2){
+        if(Integer.parseInt(this.getPart1())==Integer.parseInt(ip2.getPart1()) && Integer.parseInt(this.getPart2())==Integer.parseInt(ip2.getPart2()) && Integer.parseInt(this.getPart3())==Integer.parseInt(ip2.getPart3()) && Integer.parseInt(this.getPart4())==Integer.parseInt(ip2.getPart4())){
             return true;
         }
         else{
