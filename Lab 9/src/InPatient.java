@@ -8,11 +8,6 @@ public class InPatient extends Patient implements Admittable, Monitorable, Payab
     public InPatient(String n) {
         super(n);
     }
-
-    @Override
-    public void displayInfo() {
-        System.out.println("Patient: " + name + " (In-Patient)");
-    }
     public void admit(){
         System.out.println(name + " has been admitted.");
     }

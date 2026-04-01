@@ -1,9 +1,10 @@
-public abstract class Patient {
-    protected String name;
+public abstract class Patient extends Person {
 
     public  Patient(String n) {
-        name = n;
+        super(n);
     }
-    public abstract void displayInfo();
+    public void role(){
+        System.out.println(name + " is a Patient.");
+    }
     public abstract double calculateBill();
 }
